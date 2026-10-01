@@ -5,7 +5,7 @@ const JobCard = ({job}) => {
   return (
 
 
-    <div className="job-card">
+    <article className="job-card">
       <h3>{job.company}</h3>        
       <h2>{job.title}</h2>  
       <h3>{job.location}</h3>
@@ -13,7 +13,7 @@ const JobCard = ({job}) => {
       <p>{job.experience}</p> 
       <p>{job.salary}</p>
       <button>APPLY</button>
-    </div>
+    </article>
   )
 }
 

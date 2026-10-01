@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar.jsx"
 import jobs from "../data/jobs.js"
 import JobCard from '../components/JobCard.jsx';
 
+
 const Home = () => {
  
  
