@@ -60,7 +60,7 @@ const jobs = [
     title: "React Developer Intern",
     type: "Internship",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹20,000–₹30,000/month",
     skills: ["React", "JavaScript", "CSS", "Git"],
     description: "Assist in developing modern web interfaces using React and contribute to frontend development tasks in an agile team."
@@ -93,7 +93,7 @@ const jobs = [
     title: "Backend Developer",
     type: "Full-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹7–11 LPA",
     skills: ["Java", "Spring Boot", "REST API", "SQL"],
     description: "Design and develop backend services and APIs with a focus on reliability, scalability, and maintainability."
@@ -138,7 +138,7 @@ const jobs = [
     title: "React Developer",
     type: "Full-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹7–12 LPA",
     skills: ["React", "JavaScript", "TypeScript", "CSS"],
     description: "Create responsive and reusable frontend components for web applications and collaborate with product and design teams."
@@ -193,7 +193,7 @@ const jobs = [
     title: "UI Developer Intern",
     type: "Internship",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹20,000–₹35,000/month",
     skills: ["HTML", "CSS", "JavaScript", "React"],
     description: "Support frontend development by implementing responsive interfaces and reusable UI components."
@@ -260,7 +260,7 @@ const jobs = [
     title: "Full Stack Developer",
     type: "Full-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹7–12 LPA",
     skills: ["React", "Node.js", "Express", "MongoDB"],
     description: "Build full-stack applications using modern JavaScript technologies and develop APIs for application functionality."
@@ -271,7 +271,7 @@ const jobs = [
     title: "Software Engineer Intern",
     type: "Internship",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹30,000–₹50,000/month",
     skills: ["JavaScript", "React", "Node.js", "Git"],
     description: "Work with engineers to build and test software features while gaining practical experience in modern development workflows."
@@ -293,7 +293,7 @@ const jobs = [
     title: "Frontend Engineer",
     type: "Full-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹8–13 LPA",
     skills: ["React", "TypeScript", "JavaScript", "Redux"],
     description: "Develop high-quality frontend experiences and reusable components for web-based financial applications."
@@ -382,7 +382,7 @@ const jobs = [
     title: "Frontend Developer Intern",
     type: "Internship",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹40,000–₹60,000/month",
     skills: ["React", "TypeScript", "JavaScript", "CSS"],
     description: "Work with frontend engineers to develop accessible, responsive, and reusable components for cloud applications."
@@ -393,7 +393,7 @@ const jobs = [
     title: "Backend Engineer",
     type: "Full-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹10–16 LPA",
     skills: ["Node.js", "Java", "REST API", "Cloud"],
     description: "Build backend services and APIs that support reliable communication and cloud-based application functionality."
@@ -415,7 +415,7 @@ const jobs = [
     title: "React Developer",
     type: "Part-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹30,000–₹50,000/month",
     skills: ["React", "JavaScript", "TypeScript", "CSS"],
     description: "Develop responsive frontend features and reusable components while collaborating remotely with product and engineering teams."
@@ -437,7 +437,7 @@ const jobs = [
     title: "Frontend Developer",
     type: "Full-time",
     locationType: "Remote",
-    location: "Remote",
+    location: "Hyderabad, India",
     salary: "₹6–10 LPA",
     skills: ["React", "JavaScript", "HTML", "CSS"],
     description: "Build responsive educational web applications and reusable frontend components while improving user experience and performance."

@@ -2,6 +2,7 @@ import React from 'react'
 import FilterPanel from '../components/FilterPanel'
 import JobCard from '../components/JobCard'
 import jobs from '../data/jobs'
+import SortDropdown from '../components/SortDropdown'
 
 
 const Jobs = () => {
@@ -11,27 +12,38 @@ const Jobs = () => {
      
       <main>
         <h1>Find Your Next Opportunity</h1>
-
-      
-       <div className="job-content">
-        
+       
+         
+           
+    <div className="job-content">
+              
       <aside className ="filter-panel">
+          
           <FilterPanel />
       </aside>
 
+ 
+      <section class ="job-listings-container">
+        <div className="sortdropdown-container">
+           <SortDropdown />
+        </div>
+       
+         <div className="job-listing">
 
-      <section class ="job-listings">
-        {
+      
+         {
           jobs.slice(0,15).map((job)=>{
             return <JobCard key={job.id} job={job} />
           }) 
         }
+           </div>
+  
 
       </section>
-       </div>
+    </div>
       
 
-      </main>
+  </main>
 
            <footer>
       <section className ="footer">

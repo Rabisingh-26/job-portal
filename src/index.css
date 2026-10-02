@@ -348,8 +348,15 @@ nav {
 }
 
 /* Apply button */
-.job-card button {
+.job-card-btn{
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:5px;
+}
+.job-card-btn button {
+ 
   padding: 10px 15px;
 
   border: none;
@@ -361,7 +368,7 @@ nav {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.job-card button:hover {
+.job-card-btn button:hover {
   transform: translateY(-2px);
   background-color: var(--accent-hover);
 }
@@ -663,7 +670,37 @@ h1{
 
 /* JOB CARDS STYLING */
 
-.job-listings {
+.job-content {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.job-listings-container {
+   flex:1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sortdropdown-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+}
+.sortdropdown-container .sort-dropdown{
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background-color: var(--input-bg);
+  color: var(--text);
+ 
+}
+
+.job-listing {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
