@@ -5,6 +5,7 @@ import jobs from '../data/jobs'
 import SortDropdown from '../components/SortDropdown'
 
 
+
 const Jobs = () => {
   
   return (
@@ -38,7 +39,7 @@ const Jobs = () => {
         }
            </div>
   
-
+     
       </section>
     </div>
       

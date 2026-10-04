@@ -705,3 +705,144 @@ h1{
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+/* Empty state component styling */
+
+.emptystate-container{
+
+  width: 800px;
+  height: 600px;
+  border: 2px solid #A9B8CC;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+}
+
+.emptystate-container h2{
+  font-size: 50px;
+  font-weight: 600;
+
+}
+.emptystate-container p{
+  font-weight: 400;
+  font-size:25px;
+}
+
+/* JobDetails Page -Styling */
+
+
+/* Job Header */
+.job-header{
+  display: flex;
+  flex-direction: column;
+
+  width:700px;
+  height:300px;
+  border: 2px solid #0D9488;
+  padding:30px 70px;
+  margin:50px 450px;
+  gap:20px;
+  border-radius: 20px;
+  background-color:#123A5F;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.12);
+
+}
+  
+/* Job Header headings */
+.job-header-upper h2{
+  font-size:30px;
+  font-weight:400px;
+
+}
+
+.job-header-upper h3{
+  font-size: 35px;
+  font-weight: 600;
+
+}
+
+.job-header-middle{
+  display: flex;
+  flex-direction: column;
+   gap:2px;
+   
+}
+
+.job-header-middle h4{
+ font-weight: 700;
+ font-size: medium;
+}
+
+.job-header-middle p{
+  font-weight: 400;
+  opacity: 8px;
+  opacity: 0.5;
+}
+ /* job-header-buttons */
+.job-header-btn{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.job-header-btn button{
+  width:100px;
+  padding: 5px ;
+  border: none;
+  border-radius: 5px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+button:hover{
+  background-color:#14B8A6 ;
+  cursor: pointer;
+}
+
+
+/* job-description */
+
+.job-description{
+  display: flex;
+  flex-direction: column;
+
+  width:700px;
+
+  border: 2px solid #0D9488;
+  padding:30px 70px;
+  margin:50px 450px;
+  gap:20px;
+  border-radius: 20px;
+  background-color:#123A5F;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.12);
+}
+
+.job-description h3{
+  font-size: 25px;
+  font-weight: 700;
+
+}
+
+.job-skills{
+  
+  display: flex;
+  flex-wrap: wrap;
+ 
+  align-items: center;
+  gap: 20px;
+
+}
+
+.job-skills h3{
+  font-size:larger ;
+  font-weight: 700;
+}
+
+.job-skills span{
+    padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background-color: var(--hero);
+}
