@@ -846,3 +846,28 @@ button:hover{
   border-radius: 5px;
   background-color: var(--hero);
 }
+
+/* Saved Jobs  Page*/
+
+/* saved jobs container */
+.savedjobs-container {
+ 
+  /*border:1px solid #14B8A6;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.12);*/
+   width: 90%;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/* saved jobs  */
+
+.saved-jobs{
+ display: grid;
+  grid-template-columns: repeat(3, 330px);
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+
+}
