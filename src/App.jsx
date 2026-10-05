@@ -5,6 +5,7 @@ import Jobs from './pages/Jobs'
 import JobDetails from './pages/JobDetails'
 import SavedJobs from './pages/SavedJobs'
 import Apply from './pages/Apply'
+import LoginModal from './components/LoginModal'
 
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
      
       
       <Navbar />
-      <Apply />
+      <LoginModal />
      
       
       
