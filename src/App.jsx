@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Jobs from './pages/Jobs'
 import JobDetails from './pages/JobDetails'
 import SavedJobs from './pages/SavedJobs'
+import Apply from './pages/Apply'
 
 
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
      
       
       <Navbar />
-      <SavedJobs />
+      <Apply />
      
       
       

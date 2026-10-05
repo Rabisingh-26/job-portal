@@ -871,3 +871,120 @@ button:hover{
   justify-content: center;
 
 }
+
+/* Apply page styling */
+
+/* Page heading */
+.apply-container h2 {
+  text-align: center;
+  margin: 60px auto 0;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+/* Main form */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+
+  width: 80%;
+  max-width: 800px;
+
+  margin: 50px auto 0;
+  padding: 40px;
+
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Each field */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Inputs and select */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  background-color: var(--input-bg);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  font-size: 15px;
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--placeholder);
+  opacity: 1;
+}
+
+/* Focus state */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.15);
+}
+
+
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* Submit button */
+.apply-form button[type="submit"] {
+  width: 100%;
+  padding: 12px 20px;
+
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: var(--accent);
+  color: var(--on-accent);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.apply-form button[type="submit"]:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
