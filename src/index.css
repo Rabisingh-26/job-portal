@@ -24,6 +24,7 @@ html,
 body {
   width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -92,27 +93,37 @@ nav {
 
 /* USER LINKS */
 
-.nav-container .user {
-  display: flex;
-  gap: 30px;
-  margin-right: 30px;
+.user button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-right: 15px;
 }
 
-.nav-container .user a {
-  font-size: 20px;
-  text-decoration: none;
-  color: var(--nav-text);
-  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
-  transform-origin: center;
+.user button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
-.user a:hover {
-  transform: scale(1.08);
-}
+/* responsiveness of navbar */
 
-.link-container a,
-.user a {
-  display: inline-block;
+@media(max-width:1024px){
+  .nav-container{
+    display: flex;
+    gap:px;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-area .nav-container{
+    margin-left:2px;
+  }
+
 }
 
 /* HERO SECTION */
@@ -255,7 +266,7 @@ nav {
 
 /* Navbar SearchBar */
 .search-area.navbar {
-  margin-left: 200px;
+  flex-grow:1;
   height: 40px;
 }
 

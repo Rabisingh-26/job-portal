@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import companyLogo from "../assets/company logo.png";
 import SearchBar from './SearchBar';
+import { Link } from "react-router-dom";
+import LoginModal from './LoginModal';
+
+
+
 const Navbar = () => {
+
+    const [showLogin, setShowLogin] = useState(false);
+    
   return (
    
     <header>
@@ -16,14 +24,15 @@ const Navbar = () => {
 
                 <div className="link-container">
                 
-                 <a href="#">Home</a>
-                 <a href="#">Jobs</a>
-                <a href="#">Saved Jobs</a>
+                 <Link to ='/'>Home</Link>
+                 <Link to ='/jobs'>Jobs</Link>
+                 <Link to ='/savedJobs'>SavedJobs</Link>
                 </div>
 
                 <div className="user">
-                    <a href="#">Login</a>
-                    <a href="#">Profile</a>
+                    <button onClick={() => setShowLogin(true)}>Login</button>
+                    {showLogin && <LoginModal onClose ={setShowLogin} />}
+                    
 
                 </div>
             </div>

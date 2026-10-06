@@ -1,13 +1,21 @@
 import React from 'react'
 
 
-    const LoginModal = () => {
+    const LoginModal = ({onClose}) => {
+
+      const handlelogin = () => {
+
+      }
+
   return (
     <div className="login-overlay">
 
       <div className="login-modal">
 
-        <button className="close-btn">Close</button>
+        <button 
+        className="close-btn"
+        onClick={() => onClose(false)}
+        >Close</button>
 
         <h2>Welcome Back</h2>
         <p className="login-subtitle">
@@ -15,6 +23,7 @@ import React from 'react'
         </p>
 
         <form className="login-form">
+
 
           <div className="form-group">
             <label htmlFor="login-email">Email</label>
