@@ -1178,3 +1178,9 @@ input[type="number"] {
   font-size: 14px;
 }
 
+.login-error {
+ color: red;
+ font-size: small;
+ font-weight:600;
+ text-align: center;
+}

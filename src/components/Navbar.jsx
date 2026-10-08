@@ -9,6 +9,7 @@ import LoginModal from './LoginModal';
 const Navbar = () => {
 
     const [showLogin, setShowLogin] = useState(false);
+    const [loginStatus, setloginStatus] = useState(false);
     
   return (
    
@@ -30,10 +31,17 @@ const Navbar = () => {
                 </div>
 
                 <div className="user">
-                    <button onClick={() => setShowLogin(true)}>Login</button>
-                    {showLogin && <LoginModal onClose ={setShowLogin} />}
+                     {!loginStatus && (
+                        <button onClick={() => setShowLogin(true)}>Login</button>
+                    )}
                     
+                    {showLogin && <LoginModal 
+                    onClose ={setShowLogin}
+                    loginSuccess ={setloginStatus}
+                    
+                    />}
 
+                
                 </div>
             </div>
         </nav>

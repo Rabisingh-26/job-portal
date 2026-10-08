@@ -1,11 +1,37 @@
-import React from 'react'
+import React , {useState} from 'react'
 
 
-    const LoginModal = ({onClose}) => {
+    const LoginModal = ({onClose ,loginSuccess}) => {
 
-      const handlelogin = () => {
+      
+    const[error,setError] = useState("");
 
-      }
+      const handlelogin = (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        const email = formData.get("email");
+        const password = formData.get("password");
+
+        if(email === "" && password === ""){
+          setError("Email and password are required");
+        }
+        else if (email === "" ) {
+          setError("Email is required");
+        }
+        else if(password === ""){
+          setError("Password is required");
+        }
+        else{
+          setError("");
+          onClose(false);
+          loginSuccess(true);
+        }
+
+      };
+
+      
 
   return (
     <div className="login-overlay">
@@ -22,10 +48,14 @@ import React from 'react'
           Login to continue to Job Portal
         </p>
 
-        <form className="login-form">
+     
+       {error && <p className="login-error">{error}</p>}
+
+        <form className="login-form" onSubmit={handlelogin}>
 
 
           <div className="form-group">
+            
             <label htmlFor="login-email">Email</label>
             <input
               type="email"
@@ -68,6 +98,6 @@ import React from 'react'
 
     </div>
   );
-};
 
+    }
 export default LoginModal;
