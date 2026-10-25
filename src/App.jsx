@@ -20,8 +20,10 @@ const App = () => {
         <Route path = '/' element = {<Home />} />
         <Route path ='/jobs' element ={<Jobs />} />
         <Route path ='/savedJobs' element ={<SavedJobs />} />
+        <Route path="/jobs/:id" element={<JobDetails />} />
       </Routes> 
       </BrowserRouter>
+    
       
       
     

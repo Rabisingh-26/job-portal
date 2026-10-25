@@ -1,48 +1,87 @@
 import React from 'react'
 import jobs from '../data/jobs'
+import { useParams } from 'react-router-dom'
 
 const JobDetails = () => {
+  const {id} = useParams();
+
+
+  const job = jobs.find((item)=> item.id === Number(id));
+
+  if(!job){
+    return <p>Job not found</p>;
+  }
+
   return (
     <>
 
+       <div className="job-details">
       <div className="job-header">
-          <div className="job-header-upper">
-            <h2>Microsoft</h2>
-           <h3>Software Enginner Intern</h3>
-          </div>
+        <div className="job-header-upper">
+          <h2>{job.company}</h2>
+          <h3>{job.title}</h3>
+          <p>{job.experience}</p>
+        </div>
 
+        <div className="job-header-middle">
+          <h4>{job.type}</h4>
+          <p>{job.locationType}</p>
+          <p>{job.location}</p>
+          <p>{job.salary}</p>
+          <p>{job.category}</p>
+        </div>
 
-          <div className="job-header-middle">
-           <h4>Internship</h4>
-           <p>Hybrid</p>
-           <p>Hyderabad, India</p>
-         
-          </div>
-
-          <div className="job-header-btn">
-           <button>APPLY NOW</button>
-           <button>SAVE JOB</button>
-          </div>
-
-  
+        <div className="job-header-btn">
+          <button>APPLY NOW</button>
+          <button>SAVE JOB</button>
+        </div>
       </div>
 
       <div className="job-description">
-        <h3>Job Description</h3>
-        <p>Work with engineering teams to develop software
-         features, solve technical problems, and gain
-        experience with large-scale systems.</p>
+        <p>Posted Date: {job.postedDate}</p>
 
+        <h3>Job Description</h3>
+        <p>{job.description}</p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          {job.responsibilities.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
 
         <div className="job-skills">
-        <h3> Required Skills:</h3>
-        <span>C++</span>
-        <span>Java</span>
-        <span>Data Structures & Algorithm</span>
+          <h3>Required Skills</h3>
+          {job.skills.map((skill) => (
+            <span key={skill}>{skill}</span>
+          ))}
+        </div>
 
-      </div>
+        <div className="job-requirements">
+          <h3>Requirements</h3>
+          <ul>
+            {job.requirements.map((requirement, index) => (
+              <li key={index}>{requirement}</li>
+            ))}
+          </ul>
+        </div>
 
+        <div className="job-benefits">
+          <h3>Benefits</h3>
+          <ul>
+            {job.benefits.map((benefit, index) => (
+              <li key={index}>{benefit}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="company-description">
+          <h3>About the Company</h3>
+          <p>{job.companyDescription}</p>
+        </div>
       </div>
+    </div>
+
 
        <footer>
       <section className ="footer">
