@@ -19,7 +19,11 @@ const JobCard = ({job}) => {
     </Link>
  
       <div className="job-card-btn">
-        <button>APPLY</button>
+        
+        <Link to={`/apply/${job.id}`} className="apply-link">
+          APPLY 
+        </Link>
+
       <button>SAVE JOB</button>
       </div>
     </article>

@@ -1,6 +1,7 @@
 import React from 'react'
 import jobs from '../data/jobs'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const JobDetails = () => {
   const {id} = useParams();
@@ -32,7 +33,11 @@ const JobDetails = () => {
         </div>
 
         <div className="job-header-btn">
-          <button>APPLY NOW</button>
+          <Link to={`/apply/${job.id}`} className="apply-link">
+          APPLY NOW
+
+        </Link>
+        
           <button>SAVE JOB</button>
         </div>
       </div>

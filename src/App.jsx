@@ -5,6 +5,7 @@ import Jobs from './pages/Jobs'
 import JobDetails from './pages/JobDetails'
 import SavedJobs from './pages/SavedJobs'
 import Apply from './pages/Apply'
+
 import LoginModal from './components/LoginModal'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -21,6 +22,8 @@ const App = () => {
         <Route path ='/jobs' element ={<Jobs />} />
         <Route path ='/savedJobs' element ={<SavedJobs />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
+        <Route path="/apply/:id" element={<Apply />} />
+  
       </Routes> 
       </BrowserRouter>
     

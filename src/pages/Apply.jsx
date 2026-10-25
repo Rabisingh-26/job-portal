@@ -1,6 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+
 
 const Apply = () => {
+
+  const { id } = useParams();
+
+
+
   return (
    <main className='apply-container'>
     <h2>Apply for Frontend Developer</h2>
