@@ -5,7 +5,7 @@ import jobs from "../data/jobs.js"
 import JobCard from '../components/JobCard.jsx';
 
 
-const Home = () => {
+const Home = ({ savedJobIds, setSavedJobIds }) => {
  
  
   return (
@@ -44,7 +44,12 @@ const Home = () => {
         {/* Job Cards */}
             <div className="job-container">
                  {jobs.slice(0,6).map((job) => {
-                  return  <JobCard key={job.id} job={job} />
+                  return <JobCard
+  key={job.id}
+  job={job}
+  savedJobIds={savedJobIds}
+  setSavedJobIds={setSavedJobIds}
+/>
                           
                  })}
             </div>

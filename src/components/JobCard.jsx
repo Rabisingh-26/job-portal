@@ -1,8 +1,9 @@
 import React from 'react'
 import jobs from"../data/jobs.js"
 import { Link } from 'react-router-dom'
+import SaveButton from './SaveButton.jsx'
 
-const JobCard = ({job}) => {
+const JobCard = ({job, savedJobIds, setSavedJobIds}) => {
   return (
 
 
@@ -24,7 +25,11 @@ const JobCard = ({job}) => {
           APPLY 
         </Link>
 
-      <button>SAVE JOB</button>
+      <SaveButton
+        jobId = {job.id}
+        savedJobIds = {savedJobIds}
+        setSavedJobIds = {setSavedJobIds}
+/>
       </div>
     </article>
   )

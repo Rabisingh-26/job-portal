@@ -6,7 +6,7 @@ import SortDropdown from '../components/SortDropdown'
 
 
 
-const Jobs = () => {
+const Jobs = ({ savedJobIds, setSavedJobIds }) => {
   
   return (
     <>
@@ -34,7 +34,12 @@ const Jobs = () => {
       
          {
           jobs.slice(0,15).map((job)=>{
-            return <JobCard key={job.id} job={job} />
+            return <JobCard
+  key={job.id}
+  job={job}
+  savedJobIds={savedJobIds}
+  setSavedJobIds={setSavedJobIds}
+/>
           }) 
         }
            </div>
@@ -100,4 +105,4 @@ const Jobs = () => {
   )
 }
 
-export default Jobs
+export default Jobs;
