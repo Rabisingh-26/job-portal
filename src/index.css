@@ -751,7 +751,7 @@ h1{
 
 .emptystate-container{
 
-  width: 800px;
+  width: 1000px;
   height: 600px;
   border: 2px solid #A9B8CC;
   border-radius: 8px;
@@ -759,7 +759,8 @@ h1{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:10px;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .emptystate-container h2{
