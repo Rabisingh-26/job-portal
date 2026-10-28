@@ -14,20 +14,40 @@ const Jobs = ({ savedJobIds, setSavedJobIds }) => {
 
 const searchTitle = searchParams.get("title") || "";
 const searchLocation = searchParams.get("location") || "";
+const selectedTypes = searchParams.getAll("type");
+const selectedWorkModes = searchParams.getAll("work");
+const selectedLocations = searchParams.getAll("locations");
 
-  const filterJobs = jobs.filter((job)=>{
-    
-      const titleMatches =
-      searchTitle.trim() === "" ||
-      job.title.toLowerCase().includes(searchTitle.toLowerCase());
-  
-  
-      const locationMatches =
-      searchLocation.trim() === "" ||
-      job.location.toLowerCase().includes(searchLocation.toLowerCase());
-  
-      return titleMatches && locationMatches;
-  })
+
+const filterJobs = jobs.filter((job) => {
+  const titleMatches =
+    searchTitle.trim() === "" ||
+    job.title.toLowerCase().includes(searchTitle.trim().toLowerCase());
+
+  const locationMatches =
+    searchLocation.trim() === "" ||
+    job.location.toLowerCase().includes(searchLocation.trim().toLowerCase());
+
+  const typeMatches =
+    selectedTypes.length === 0 ||
+    selectedTypes.includes(job.type);
+
+  const workModeMatches =
+    selectedWorkModes.length === 0 ||
+    selectedWorkModes.includes(job.locationType);
+
+  const specificLocationMatches =
+    selectedLocations.length === 0 ||
+    selectedLocations.includes(job.location);
+
+  return (
+    titleMatches &&
+    locationMatches &&
+    typeMatches &&
+    workModeMatches &&
+    specificLocationMatches
+  );
+});
 
   return (
     <>
@@ -45,7 +65,7 @@ const searchLocation = searchParams.get("location") || "";
       </aside>
 
  
-      <section class ="job-listings-container">
+      <section className ="job-listings-container">
         <div className="sortdropdown-container">
            <SortDropdown />
         </div>

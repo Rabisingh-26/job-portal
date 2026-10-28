@@ -9,7 +9,7 @@ const SearchBar = ({variant}) => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-     console.log("Search button clicked");
+     
     const params = new URLSearchParams({
       title: searchTitle,
       location: searchLocation
