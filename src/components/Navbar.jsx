@@ -12,7 +12,7 @@ const Navbar = () => {
     const [loginStatus, setloginStatus] = useState(false);
     
   return (
-   
+   <>
     <header>
         <nav>
             <div className="nav-container">
@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
         </nav>
     </header>
-
+</>
   )
 }
 

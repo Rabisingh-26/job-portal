@@ -1,4 +1,6 @@
+
 import React , {useState} from 'react'
+import { createPortal } from 'react-dom';
 
 
     const LoginModal = ({onClose ,loginSuccess}) => {
@@ -33,7 +35,7 @@ import React , {useState} from 'react'
 
       
 
-  return (
+  return createPortal(
     <div className="login-overlay">
 
       <div className="login-modal">
@@ -96,7 +98,8 @@ import React , {useState} from 'react'
 
       </div>
 
-    </div>
+    </div>,
+    document.body
   );
 
     }
