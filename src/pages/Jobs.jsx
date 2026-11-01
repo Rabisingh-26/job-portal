@@ -1,148 +1,185 @@
-import React from 'react'
-import FilterPanel from '../components/FilterPanel'
-import JobCard from '../components/JobCard'
-import jobs from '../data/jobs'
-import SortDropdown from '../components/SortDropdown'
-import { useSearchParams } from "react-router-dom";
-import EmptyState from "../components/EmptyState.jsx"
 
-
+import React, { useState } from 'react';
+import FilterPanel from '../components/FilterPanel';
+import JobCard from '../components/JobCard';
+import jobs from '../data/jobs';
+import SortDropdown from '../components/SortDropdown';
+import { useSearchParams } from 'react-router-dom';
+import EmptyState from '../components/EmptyState.jsx';
 
 const Jobs = ({ savedJobIds, setSavedJobIds }) => {
 
+  const [sortOption, setSortOption] = useState("newest");
+
   const [searchParams] = useSearchParams();
 
-const searchTitle = searchParams.get("title") || "";
-const searchLocation = searchParams.get("location") || "";
-const selectedTypes = searchParams.getAll("type");
-const selectedWorkModes = searchParams.getAll("work");
-const selectedLocations = searchParams.getAll("locations");
+  const searchTitle = searchParams.get("title") || "";
+  const searchLocation = searchParams.get("location") || "";
+  const selectedTypes = searchParams.getAll("type");
+  const selectedWorkModes = searchParams.getAll("work");
+  const selectedLocations = searchParams.getAll("locations");
 
+  // Filter Jobs
+  const filterJobs = jobs.filter((job) => {
 
-const filterJobs = jobs.filter((job) => {
-  const titleMatches =
-    searchTitle.trim() === "" ||
-    job.title.toLowerCase().includes(searchTitle.trim().toLowerCase());
+    const titleMatches =
+      searchTitle.trim() === "" ||
+      job.title.toLowerCase().includes(searchTitle.trim().toLowerCase());
 
-  const locationMatches =
-    searchLocation.trim() === "" ||
-    job.location.toLowerCase().includes(searchLocation.trim().toLowerCase());
+    const locationMatches =
+      searchLocation.trim() === "" ||
+      job.location.toLowerCase().includes(searchLocation.trim().toLowerCase());
 
-  const typeMatches =
-    selectedTypes.length === 0 ||
-    selectedTypes.includes(job.type);
+    const typeMatches =
+      selectedTypes.length === 0 ||
+      selectedTypes.includes(job.type);
 
-  const workModeMatches =
-    selectedWorkModes.length === 0 ||
-    selectedWorkModes.includes(job.locationType);
+    const workModeMatches =
+      selectedWorkModes.length === 0 ||
+      selectedWorkModes.includes(job.locationType);
 
-  const specificLocationMatches =
-    selectedLocations.length === 0 ||
-    selectedLocations.includes(job.location);
+    const specificLocationMatches =
+      selectedLocations.length === 0 ||
+      selectedLocations.includes(job.location);
 
-  return (
-    titleMatches &&
-    locationMatches &&
-    typeMatches &&
-    workModeMatches &&
-    specificLocationMatches
-  );
-});
+    return (
+      titleMatches &&
+      locationMatches &&
+      typeMatches &&
+      workModeMatches &&
+      specificLocationMatches
+    );
+  });
+
+  // Copy filtered jobs before sorting
+
+ function getMinimumSalary(salary) {
+  const sal = salary.split("–");
+  const minSal = sal[0];
+
+  const mainSal = minSal.replace(",", "");
+  const mainSal2 = mainSal.replace("₹", "");
+
+  return Number(mainSal2);
+}
+const sortedJobs = [...filterJobs];
+
+if (sortOption === "newest") {
+  sortedJobs.sort((a, b) => {
+    return b.postedDate.localeCompare(a.postedDate);
+  });
+
+} else if (sortOption === "salary-high") {
+  sortedJobs.sort((a, b) => {
+    return getMinimumSalary(b.salary) - getMinimumSalary(a.salary);
+  });
+
+} else if (sortOption === "salary-low") {
+  sortedJobs.sort((a, b) => {
+    return getMinimumSalary(a.salary) - getMinimumSalary(b.salary);
+  });
+
+} else if (sortOption === "title-az") {
+  sortedJobs.sort((a, b) => {
+    return a.title.localeCompare(b.title);
+  });
+}
 
   return (
     <>
-     
       <main>
         <h1>Find Your Next Opportunity</h1>
-       
-         
-           
-    <div className="job-content">
-              
-      <aside className ="filter-panel">
-          
-          <FilterPanel />
-      </aside>
 
- 
-      <section className ="job-listings-container">
-        <div className="sortdropdown-container">
-           <SortDropdown />
-        </div>
-       
+        <div className="job-content">
+
+          <aside className="filter-panel">
+            <FilterPanel />
+          </aside>
+
+          <section className="job-listings-container">
+
+            <div className="sortdropdown-container">
+              <SortDropdown
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+              />
+            </div>
+
             <div className="job-listing">
-             {filterJobs.length > 0 ? (
-              filterJobs.slice(0, 15).map((job) => (
-              <JobCard
-                key={job.id}
-                  job={job}
-                   savedJobIds={savedJobIds}
-                   setSavedJobIds={setSavedJobIds}
-                   />
-                 ))
-             ) : (
-            <EmptyState />
-               )}
-          </div>
-     
-      </section>
-    </div>
-      
 
-  </main>
+              {sortedJobs.length > 0 ? (
+                sortedJobs.slice(0, 15).map((job) => (
+                  <JobCard
+                    key={job.id}
+                    job={job}
+                    savedJobIds={savedJobIds}
+                    setSavedJobIds={setSavedJobIds}
+                  />
+                ))
+              ) : (
+                <EmptyState />
+              )}
 
-           <footer>
-      <section className ="footer">
+            </div>
 
-        <div className="footer-container">
-          <h2>Find relevant job opportunities, explore career options, and take the next step toward your career goals.</h2>
-
-         <div className="footer-card-container"> <div className="footer-card">
-            <h3>Quick Links</h3>
-            <a href="#">Home</a>
-            <a href="#">Jobs</a>
-            <a href="#">Save Jobs</a>
-           
-          </div>
-          <div className="footer-card">
-            <h3>For Job Seekers</h3>
-            <a href="#">Browse Jobs</a>
-            <a href="#">Search Jobs</a>
-            <a href="#">Saved Jobs</a>
-            <a href="#">Application</a>
-
-          </div>
-
-             <div className="footer-card">
-      <h3>Compant</h3>
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-    </div>
+          </section>
         </div>
+      </main>
 
-         <div className="footer-contact">
-        <h3>Contact:</h3>
-        <a href="mailto:support@jobportal.com">
-         support@jobportal.com
-        </a>
-        </div>
+      <footer>
+        <section className="footer">
 
-         <div className="footer-bottom">
-        <p>© 2026 Job Portal. All rights reserved.</p>
-       </div>
+          <div className="footer-container">
 
-         
-        </div>
-      </section>
+            <h2>
+              Find relevant job opportunities, explore career options,
+              and take the next step toward your career goals.
+            </h2>
 
+            <div className="footer-card-container">
 
+              <div className="footer-card">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Jobs</a>
+                <a href="#">Save Jobs</a>
+              </div>
+
+              <div className="footer-card">
+                <h3>For Job Seekers</h3>
+                <a href="#">Browse Jobs</a>
+                <a href="#">Search Jobs</a>
+                <a href="#">Saved Jobs</a>
+                <a href="#">Application</a>
+              </div>
+
+              <div className="footer-card">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+              </div>
+
+            </div>
+
+            <div className="footer-contact">
+              <h3>Contact:</h3>
+              <a href="mailto:support@jobportal.com">
+                support@jobportal.com
+              </a>
+            </div>
+
+            <div className="footer-bottom">
+              <p>© 2026 Job Portal. All rights reserved.</p>
+            </div>
+
+          </div>
+
+        </section>
       </footer>
-
-    
     </>
-  )
-}
+  );
+};
 
 export default Jobs;

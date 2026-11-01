@@ -77,7 +77,7 @@ const Apply = () => {
       <section className ="footer">
 
         <div className="footer-container">
-          <h2>Find relevant job opportunities, explore career options, and take the next step toward your career goals.</h2>
+          <h3>Find relevant job opportunities, explore career options, and take the next step toward your career goals.</h3>
 
          <div className="footer-card-container"> <div className="footer-card">
             <h3>Quick Links</h3>
