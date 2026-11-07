@@ -134,8 +134,6 @@ This is a **frontend-only application**.
 
 **Rabi Singh**
 
-B.Tech – Computer Science & Design
-
 - GitHub: [Rabisingh-26](https://github.com/Rabisingh-26)
 - Repository: [Job Portal](https://github.com/Rabisingh-26/job-portal)
 
